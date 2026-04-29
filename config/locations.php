@@ -3,29 +3,73 @@
 return [
 
     'states' => [
-        'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar',
-        'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana',
-        'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala',
-        'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya',
-        'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan',
-        'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura',
-        'Uttar Pradesh', 'Uttarakhand', 'West Bengal',
-        'Andaman and Nicobar Islands', 'Chandigarh',
-        'Dadra and Nagar Haveli and Daman and Diu', 'Delhi',
-        'Jammu and Kashmir', 'Ladakh', 'Lakshadweep', 'Puducherry',
+
+        [
+            'id' => 1,
+            'name' => 'Maharashtra',
+        ],
+
+        [
+            'id' => 2,
+            'name' => 'Gujarat',
+        ],
+
+        [
+            'id' => 3,
+            'name' => 'Delhi',
+        ],
+
     ],
 
     'cities' => [
-        'Maharashtra'   => ['Mumbai', 'Pune', 'Nagpur', 'Nashik', 'Aurangabad', 'Solapur', 'Kolhapur', 'Thane', 'Navi Mumbai'],
-        'Gujarat'       => ['Ahmedabad', 'Surat', 'Vadodara', 'Rajkot', 'Bhavnagar', 'Jamnagar', 'Gandhinagar'],
-        'Delhi'         => ['New Delhi', 'Dwarka', 'Rohini', 'Shahdara', 'Saket', 'Lajpat Nagar'],
-        'Karnataka'     => ['Bengaluru', 'Mysuru', 'Hubli', 'Mangaluru', 'Belagavi', 'Tumkuru'],
-        'Tamil Nadu'    => ['Chennai', 'Coimbatore', 'Madurai', 'Tiruchirappalli', 'Salem', 'Tirunelveli'],
-        'Uttar Pradesh' => ['Lucknow', 'Kanpur', 'Agra', 'Varanasi', 'Meerut', 'Allahabad', 'Ghaziabad', 'Noida'],
-        'Rajasthan'     => ['Jaipur', 'Jodhpur', 'Udaipur', 'Kota', 'Bikaner', 'Ajmer'],
-        'West Bengal'   => ['Kolkata', 'Howrah', 'Durgapur', 'Asansol', 'Siliguri'],
-        'Madhya Pradesh'=> ['Bhopal', 'Indore', 'Gwalior', 'Jabalpur', 'Ujjain'],
-        'Punjab'        => ['Ludhiana', 'Amritsar', 'Jalandhar', 'Patiala', 'Bathinda'],
+
+        1 => [ // Maharashtra
+
+            [
+                'id' => 1,
+                'name' => 'Mumbai',
+            ],
+
+            [
+                'id' => 2,
+                'name' => 'Pune',
+            ],
+
+            [
+                'id' => 3,
+                'name' => 'Nagpur',
+            ],
+
+        ],
+
+        2 => [ // Gujarat
+
+            [
+                'id' => 4,
+                'name' => 'Ahmedabad',
+            ],
+
+            [
+                'id' => 5,
+                'name' => 'Surat',
+            ],
+
+        ],
+
+        3 => [ // Delhi
+
+            [
+                'id' => 6,
+                'name' => 'New Delhi',
+            ],
+
+            [
+                'id' => 7,
+                'name' => 'Dwarka',
+            ],
+
+        ],
+
     ],
 
 ];

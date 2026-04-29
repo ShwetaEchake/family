@@ -58,8 +58,11 @@
                                     <label>State <span class="text-danger">*</span></label>
                                     <select name="state" id="state" class="form-control">
                                         <option value="">Select State</option>
-                                        <option value="Maharashtra">Maharashtra</option>
-                                        <option value="Gujarat">Gujarat</option>
+                                        @foreach(config('locations.states') as $state)
+                                            <option value="{{ $state['id'] }}">
+                                                {{ $state['name'] }}
+                                            </option>
+                                        @endforeach
                                     </select>
                                     <span class="text-danger state_err"></span>
                                 </div>
@@ -601,6 +604,7 @@ function toggleWeddingDate(rowId, value)
 
 {{-- State City Dropdown --}}
 <script>
+
     $('#state').change(function () {
 
         let state = $(this).val();
@@ -608,23 +612,33 @@ function toggleWeddingDate(rowId, value)
         $('#city').html('<option value="">Loading...</option>');
 
         $.ajax({
+
             url: "{{ route('ajax.cities') }}",
             type: "GET",
-            data: { state : state },
+
+            data: {
+                state: state
+            },
 
             success: function(response)
             {
                 $('#city').html('<option value="">Select City</option>');
 
-                $.each(response, function(key, value) {
+                $.each(response, function(index, city) {
+
                     $('#city').append(
-                        `<option value="${value}">${value}</option>`
+                        `<option value="${city.id}">
+                            ${city.name}
+                        </option>`
                     );
+
                 });
             }
+
         });
 
     });
+
 </script>
 
 

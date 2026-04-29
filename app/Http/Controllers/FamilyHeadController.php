@@ -331,29 +331,41 @@ class FamilyHeadController extends Controller
         ];
     }
 
-    /**
-     * Get cities by state (AJAX endpoint)
-     */
+
     public function getCities(Request $request)
     {
-        $state = $request->get('state');
-        $cities = $this->getCitiesByState($state);
-        return response()->json($cities);
+        $stateId = $request->state;
+        $cities = config('locations.cities');
+        $stateCities = $cities[$stateId] ?? [];
+        return response()->json($stateCities);
     }
 
-    /**
-     * Returns states list.
-     */
-    private function getStates(): array
+     private function getStates(): array
     {
          return Config::get('locations.states');
     }
 
+
+
+    /**
+     * Get cities by state (AJAX endpoint)
+     */
+    // public function getCities(Request $request)
+    // {
+    //     $state = $request->get('state');
+    //     $cities = $this->getCitiesByState($state);
+    //     return response()->json($cities);
+    // }
+
+    /**
+     * Returns states list.
+     */
+
     /**
      * Returns cities by state.
      */
-    private function getCitiesByState(string $state): array
-    {
-        return Config::get("locations.cities.$state", ['Other']);
-    }
+    // private function getCitiesByState(string $state): array
+    // {
+    //     return Config::get("locations.cities.$state", ['Other']);
+    // }
 }

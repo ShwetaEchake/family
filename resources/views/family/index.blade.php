@@ -26,7 +26,6 @@
                                         <th>#</th>
                                         <th>Name</th>
                                         <th>Mobile</th>
-                                        <th>State / City</th>
                                         <th>Marital Status</th>
                                         <th style="text-align:center">Members</th>
                                         <th>Registered</th>
@@ -50,10 +49,6 @@
                                                 </div>
                                             </td>
                                             <td>{{ $head->mobile_no }}</td>
-                                            <td>
-                                                <div style="font-size:0.8rem;color:var(--gray)">{{ $head->state }}</div>
-                                                <div>{{ $head->city }}</div>
-                                            </td>
                                             <td>
                                                 @if($head->marital_status === 'married')
                                                     Married
