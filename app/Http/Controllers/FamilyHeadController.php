@@ -126,6 +126,9 @@ class FamilyHeadController extends Controller
     public function show(FamilyHead $familyHead)
     {
         $familyHead->load(['hobbies', 'familyMembers']);
+        $state = collect(config('locations.states'))->firstWhere('id', $familyHead->state);
+        $cities = config('locations.cities')[$familyHead->state] ?? [];
+        $city = collect($cities)->firstWhere('id', $familyHead->city);
 
         $html = '
 
@@ -179,13 +182,13 @@ class FamilyHeadController extends Controller
                     <strong>State :</strong>
                 </div>
                 <div class="col-md-8 mt-2">
-                    '.$familyHead->state.'
+                    '.($state['name'] ?? '-').'
                 </div>
                 <div class="col-md-4 mt-2">
                     <strong>City :</strong>
                 </div>
                 <div class="col-md-8 mt-2">
-                    '.$familyHead->city.'
+                    '.($city['name'] ?? '-').'
                 </div>
                 <div class="col-md-4 mt-2">
                     <strong>Pincode :</strong>
